@@ -1,0 +1,234 @@
+.notification-toast {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    right: 20px;
+    background: black;
+    max-width: 300px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 20px hsla(0, 0%, 0%, 0.15);
+    transform: translateX(calc(-100% - 40px));
+    transition: 0.5s ease-in-out;
+    z-index: 5;
+    animation: slideInOut 10s ease-in-out infinite;
+  }
+
+  
+@keyframes slideInOut {
+  0%,
+  45%,
+  100% {
+    transform: translateX(calc(-100% - 40px));
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  50%,
+  95% {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.notification-toast.closed {
+  display: none;
+}
+
+.toast-detail {
+  width: calc(100% - 85px);
+  padding-right: 10px;
+}
+
+.toast-message {
+  font-size: 10px;
+  color: rgb(184, 41, 41);
+  margin-bottom: 8px;
+}
+
+.toast-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: pink;
+}
+
+.banner {
+  margin: 30px 0;
+}
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--border-radius-md);
+  overflow: auto hidden;
+  scroll-snap-type: inline mandatory;
+  overscroll-behavior-inline: contain;
+}
+.slider-item {
+  position: relative;
+  min-width: 100%;
+  max-height: 450px;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+.slider-item .banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+}
+.banner-content {
+  background: white;
+  position: absolute;
+  bottom: 25px;
+
+  padding: 20px 25px;
+}
+
+.banner-subtitle {
+  color: pink;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.banner-title {
+  color: black;
+  font-size: 15px;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.banner-btn {
+  background: pink;
+  color: white;
+  width: max-content;
+  font-size: 11px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 10px;
+  transition: var(--transition-timing);
+}
+
+.banner-btn:hover {
+  background: black;
+}
+.product-main {
+  margin-bottom: 25px;
+}
+
+.product-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 1fr;
+}
+.product-grid .showcase {
+  border: 1px solid blanchedalmond;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.product-grid .showcase:hover {
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.1);
+}
+.product-grid .showcase-banner {
+  position: relative;
+}
+.product-grid .product-img {
+  object-fit: cover;
+  transition: var(--transition-timing);
+}
+
+.product-grid .product-img.default {
+  position: relative;
+  z-index: 1;
+}
+.product-grid .product-img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+.product-grid .showcase:hover .product-img.hover {
+  opacity: 1;
+}
+.product-grid .showcase:hover .product-img.default {
+  opacity: 0;
+}
+.product-grid .showcase:hover .product-img {
+  transform: scale(1.1);
+}
+.blog {
+  margin-bottom: 25px;
+}
+.product-grid .showcase-content {
+  padding: 15px 20px 0;
+}
+.product-grid .price-box {
+  display: flex;
+  gap: 10px;
+  font-size: var(--fs-7);
+  color: var(--eerie-black);
+  margin-bottom: 10px;
+}
+
+.product-grid .price {
+  font-weight: var(--weight-700);
+}
+
+.product-grid del {
+  color: var(--sonic-silver);
+}
+.container {
+  max-width: 980px;
+}
+.blog-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  overflow-x: auto;
+}
+.blog-card {
+  min-width: 100%;
+  min-width: calc(25% - 22.5px);
+  scroll-snap-type: start;
+}
+
+.blog-banner {
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+a {
+  list-style: none;
+}
+.blog-category {
+  width: max-content;
+  color: pink;
+  font-size: 30px;
+  list-style: none;
+}
+.blog-title {
+  color: black;
+  font-size: var(--fs-5);
+  font-weight: var(--weight-600);
+  line-height: 1.4;
+  margin-bottom: 5px;
+  transition: var(--transition-timing);
+}
+.blog-title:hover {
+  color: pink;
+}
+.blog-meta {
+  color: var(--sonic-silver);
+  font-size: var(--davys-gray);
+}
